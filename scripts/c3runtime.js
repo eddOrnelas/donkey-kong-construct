@@ -651,13 +651,13 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Platform.Acts.SetEnabled,
 		C3.Plugins.Sprite.Acts.SetY,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
+		C3.Plugins.Touch.Cnds.OnTouchObject,
+		C3.ScriptsInEvents.Mainrules_Event18_Act1,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
-		C3.Plugins.Sprite.Exps.Height,
 		C3.Behaviors.Platform.Acts.SimulateControl,
 		C3.Plugins.Keyboard.Cnds.OnKey,
-		C3.Behaviors.Platform.Cnds.IsFalling,
-		C3.Plugins.Touch.Cnds.OnTouchObject
+		C3.Behaviors.Platform.Cnds.IsFalling
 	];
 };
 self.C3_JsPropNameTable = [
@@ -696,6 +696,7 @@ self.C3_JsPropNameTable = [
 	{gameOverLabel: 0},
 	{HighScoreCounterLabel: 0},
 	{LadderBotton: 0},
+	{larger: 0},
 	{lives: 0},
 	{bonusPoints: 0},
 	{gameState: 0},
@@ -884,10 +885,6 @@ self.C3_JsPropNameTable = [
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() - 1);
-		},
-		p => {
-			const n0 = p._GetNode(0);
-			return () => ((-n0.ExpObject()) + 15);
 		}
 	];
 }
@@ -898,7 +895,14 @@ self.C3_JsPropNameTable = [
 {
 	const scriptsInEvents = {
 
-
+		async Mainrules_Event18_Act1(runtime, localVars)
+		{
+			var elem = document.body;
+			console.log('document.body: ', elem);
+			if (elem.requestFullscreen) {
+			  elem.requestFullscreen();
+			}
+		}
 
 	};
 	
