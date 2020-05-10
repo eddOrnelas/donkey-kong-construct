@@ -1,7 +1,7 @@
 {
 	"name": "Donkey Kong",
 	"short_name": "Donkey Kong",
-	"description": "",
+	"description": "DK Demo",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "landscape",
